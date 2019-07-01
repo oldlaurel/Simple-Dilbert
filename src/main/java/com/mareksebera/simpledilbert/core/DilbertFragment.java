@@ -274,8 +274,8 @@ public final class DilbertFragment extends Fragment {
                                 FileOutputStream out = new FileOutputStream(tmp);
                                 b.compress(CompressFormat.JPEG, 100, out);
                                 out.close();
-                                FragmentActivity activity = getActivity();
-                                Uri u = FileProvider.getUriForFile(activity, activity.getPackageName() + ".provider", tmp);
+                                Context ctx = getActivity();
+                                Uri u = FileProvider.getUriForFile(ctx, ctx.getPackageName() + ".provider", tmp);
                                 i.putExtra(Intent.EXTRA_STREAM, u);
                             } else {
                                 i.putExtra(
